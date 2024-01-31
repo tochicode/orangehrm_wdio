@@ -1,7 +1,7 @@
 const { expect } = require('@wdio/globals')
 const LoginPage = require('../pageobjects/login.page')
 const DashboardPage = require('../pageobjects/dashboard.page')
-// const LogoutPage = require('../pageobjects/logout.page')
+const LogoutPage = require('../pageobjects/logout.page')
 
 
 describe('My Login application', () => {
@@ -10,6 +10,8 @@ describe('My Login application', () => {
         await LoginPage.login('Admin', 'admin123')
 
         await DashboardPage.items();
+
+        await LogoutPage.logout();
     })
 })
 
